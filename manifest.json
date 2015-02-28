@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Continue Play",
+  "description": "This plugin checks if the netflix continue playing popup is visible and triggers the continue playing button",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "disabled.png",
+    "default_title": "Toggle Continue Playing"
+  },
+  "background": {
+    "scripts": ["continueplaying.js"]
+  },
+  "content_scripts": [{
+        "matches": ["http://www.netflix.com/*"],
+        "js": ["content.js"]
+    }],
+  "permissions": [
+    "activeTab",
+    "http://www.netflix.com/*"
+  ]
+}
